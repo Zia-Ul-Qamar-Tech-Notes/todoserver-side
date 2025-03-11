@@ -9,7 +9,7 @@ app.use(express.json());
 
 mongoose
   .connect(process.env.MONGO_URI, {
-    dbName: "azureDO",
+    dbName: "azureDB",
   })
   .then(() => console.log("MongoDB Connected"))
   .catch((err) => console.log(err));
