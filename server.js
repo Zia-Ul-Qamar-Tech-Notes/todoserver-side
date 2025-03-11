@@ -24,7 +24,7 @@ const Todo = mongoose.model("Todo", TodoSchema);
 // Routes
 
 app.get("/", async (req, res) => {
-  res.json("Welcome to Server Side! Go to TODOS");
+  res.json("Welcome to Server Side!");
 });
 
 app.get("/todos", async (req, res) => {
