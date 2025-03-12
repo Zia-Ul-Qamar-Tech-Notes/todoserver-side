@@ -69,7 +69,7 @@ app.get("/", (req, res) => {
 app.get("/todos", cacheTodos, async (req, res) => {
   try {
     const todos = await Todo.find({});
-    await redisClient.set("todos", 3600, JSON.stringify(todos)); // Cache for 1 hour
+    await redisClient.set("todos", JSON.stringify(todos), "EX", 3600); // Cache for 1 hour
     res.json(todos);
   } catch (error) {
     console.error("Error fetching todos:", error);
