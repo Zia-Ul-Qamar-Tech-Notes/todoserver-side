@@ -37,7 +37,9 @@ const redisClient = new Redis({
 //   .then(() => console.log("Redis Connected"))
 //   .catch((err) => console.error("Redis Connection Error:", err));
 
-redisClient.on("connect", () => console.log("🔗 Connected to Azure Redis"));
+redisClient.on("connect", () =>
+  console.log("🔗 Connected to Azure Redis Successfully")
+);
 redisClient.on("error", (err) => console.error("❌ Redis Error:", err));
 
 // Todo Schema & Model
